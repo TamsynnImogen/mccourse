@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "xx "
+  ],
+  "key":
+  {
+    "x":
+    {
+      "item": "mccourse:copper_block"
+    }
+  },
+  "result":
+  {
+    "item": "mccourse:copper_pressure_plate"
+  }
+}
