@@ -20,7 +20,7 @@ public class ModBlocks
     public static final RegistryObject<Block> COPPER_ORE = register("copper_ore",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
                     .hardnessAndResistance(3f, 10f)
-                    .harvestLevel(2).harvestTool(ToolType.PICKAXE).sound(SoundType.STONE)));
+                    .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> COPPER_STAIRS =
             register( "copper_stairs", () -> new StairsBlock(() -> ModBlocks.COPPER_BLOCK.get().getDefaultState(),
