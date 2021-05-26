@@ -1,6 +1,7 @@
 package com.tamsynnclaydon.mccourse;
 
 import com.tamsynnclaydon.mccourse.block.ModBlocks;
+import com.tamsynnclaydon.mccourse.block.ModFluids;
 import com.tamsynnclaydon.mccourse.events.ModEvents;
 import com.tamsynnclaydon.mccourse.item.ModItems;
 import com.tamsynnclaydon.mccourse.util.Config;
@@ -56,6 +57,7 @@ public class MCCourseMod
         Registration.register();
         ModItems.register();
         ModBlocks.register();
+        ModFluids.register();
 
         MinecraftForge.EVENT_BUS.register(new ModEvents());
 
