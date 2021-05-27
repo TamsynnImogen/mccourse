@@ -3,6 +3,7 @@ package com.tamsynnclaydon.mccourse.item;
 import com.tamsynnclaydon.mccourse.MCCourseMod;
 import com.tamsynnclaydon.mccourse.block.ModBlocks;
 import com.tamsynnclaydon.mccourse.block.ModFluids;
+import com.tamsynnclaydon.mccourse.entity.ModEntityTypes;
 import com.tamsynnclaydon.mccourse.util.Registration;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
@@ -98,6 +99,11 @@ public class ModItems
             Registration.ITEMS.register("oil_bucket",
                     () -> new BucketItem(ModFluids.OIL_FLUID::get,
                             new Item.Properties().group(MCCourseMod.COURSE_TAB).maxStackSize(1)));
+
+    public static final RegistryObject<ModSpawnEggItem> BUFFALO_SPAWNING_EGG =
+            Registration.ITEMS.register("buffalo_spawn_egg",
+                    () -> new ModSpawnEggItem(ModEntityTypes.BUFFALO, 0xF02F4A, 0x7034F1,
+                            new Item.Properties().group(MCCourseMod.COURSE_TAB)));
 
     public static void register() { }
 

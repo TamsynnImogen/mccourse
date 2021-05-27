@@ -30,7 +30,8 @@ public class BuffaloEntity extends AnimalEntity
     {
         return MobEntity.registerAttributes()
                 .createMutableAttribute(Attributes.MAX_HEALTH, 20D)
-                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.35D);
+                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.35D)
+                .createMutableAttribute(Attributes.FOLLOW_RANGE, 15D); // Needed in 1.16.5
     }
 
     @Nullable

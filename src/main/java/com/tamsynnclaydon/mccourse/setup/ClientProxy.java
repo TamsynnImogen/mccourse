@@ -5,6 +5,7 @@ import com.tamsynnclaydon.mccourse.block.ModBlocks;
 import com.tamsynnclaydon.mccourse.container.ModContainers;
 import com.tamsynnclaydon.mccourse.entity.ModEntityTypes;
 import com.tamsynnclaydon.mccourse.entity.render.BuffaloRenderer;
+import com.tamsynnclaydon.mccourse.item.ModSpawnEggItem;
 import com.tamsynnclaydon.mccourse.screens.ElectrifierScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScreenManager;
@@ -23,12 +24,12 @@ public class ClientProxy implements IProxy
     public void init()
     {
         RenderTypeLookup.setRenderLayer(ModBlocks.ZUCCINI_CROP.get(), RenderType.getCutout());
-
         RenderTypeLookup.setRenderLayer(ModBlocks.REDWOOD_SAPLING.get(), RenderType.getCutout());
 
         ScreenManager.registerFactory(ModContainers.ELECTRIFIER_CONTAINER.get(), ElectrifierScreen::new);
-
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.BUFFALO.get(), BuffaloRenderer::new);
+
+        ModSpawnEggItem.initSpawnEggs();
     }
 
 
