@@ -47,6 +47,9 @@ public class ModBlocks
             Registration.BLOCKS.register("zuccini_crop",
                     () -> new ZucciniCrop(AbstractBlock.Properties.from(Blocks.WHEAT)));
 
+    public static final RegistryObject<Block> ELECTRIFIER =
+            register("electrifier", () -> new Electrifier(AbstractBlock.Properties.create(Material.IRON)
+                    .hardnessAndResistance(4f).harvestTool(ToolType.PICKAXE)));
 
     public static void register() { }
 

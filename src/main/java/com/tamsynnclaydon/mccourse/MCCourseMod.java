@@ -2,11 +2,13 @@ package com.tamsynnclaydon.mccourse;
 
 import com.tamsynnclaydon.mccourse.block.ModBlocks;
 import com.tamsynnclaydon.mccourse.block.ModFluids;
+import com.tamsynnclaydon.mccourse.container.ModContainers;
 import com.tamsynnclaydon.mccourse.events.ModEvents;
 import com.tamsynnclaydon.mccourse.item.ModItems;
 import com.tamsynnclaydon.mccourse.setup.ClientProxy;
 import com.tamsynnclaydon.mccourse.setup.IProxy;
 import com.tamsynnclaydon.mccourse.setup.ServerProxy;
+import com.tamsynnclaydon.mccourse.tileentity.ModTileEntities;
 import com.tamsynnclaydon.mccourse.util.Config;
 import com.tamsynnclaydon.mccourse.util.Registration;
 import net.minecraft.block.Block;
@@ -96,6 +98,8 @@ public class MCCourseMod
         ModItems.register();
         ModBlocks.register();
         ModFluids.register();
+        ModTileEntities.register();
+        ModContainers.register();
 
         // register mod events
         MinecraftForge.EVENT_BUS.register(new ModEvents());

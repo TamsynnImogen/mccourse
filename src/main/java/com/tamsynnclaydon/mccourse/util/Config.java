@@ -12,6 +12,8 @@ public class Config
     public static ForgeConfigSpec CLIENT_CONFIG;
 
     public static ForgeConfigSpec.IntValue COPPERED_GLOW_DURATION;
+    public static ForgeConfigSpec.IntValue ELECTRIFIER_CONVERSION;
+    public static ForgeConfigSpec.IntValue ELECTRIFIER_MAX_ENERGY;
 
     static {
 
@@ -29,6 +31,21 @@ public class Config
     {
         COPPERED_GLOW_DURATION = CLIENT_BUILDER.comment("How long the glowing lasts for Coppered Apples (in ticks)")
                 .defineInRange( "glow_duration", 600, 100, Integer.MAX_VALUE);
+    }
+
+    private static void energyConversion(ForgeConfigSpec.Builder SERVER_BUILDER,
+                                        ForgeConfigSpec.Builder CLIENT_BUILDER)
+
+    {
+        ELECTRIFIER_CONVERSION = CLIENT_BUILDER.comment("How long it takes to convert Diamonds into energy")
+                .defineInRange( "energy_conversion", 10, 0, Integer.MAX_VALUE);
+    }
+
+    private static void maxEnergy(ForgeConfigSpec.Builder SERVER_BUILDER,
+                                         ForgeConfigSpec.Builder CLIENT_BUILDER)
+    {
+        ELECTRIFIER_MAX_ENERGY = CLIENT_BUILDER.comment("How much energy it takes to make an Emerald")
+                .defineInRange( "max_energy", 64, 10, Integer.MAX_VALUE);
     }
 
     public static void loadConfigFile(ForgeConfigSpec config, String path)
