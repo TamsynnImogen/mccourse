@@ -37,6 +37,8 @@
 
   "block.mccourse.electrifier": "Electrifier",
 
-  "itemGroup.CourseTab": "Course Tab"
+  "itemGroup.CourseTab": "Course Tab",
+
+  "entity.mccourse.buffalo": "Buffalo"
 
 }
