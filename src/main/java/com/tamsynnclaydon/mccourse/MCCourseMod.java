@@ -3,6 +3,8 @@ package com.tamsynnclaydon.mccourse;
 import com.tamsynnclaydon.mccourse.block.ModBlocks;
 import com.tamsynnclaydon.mccourse.block.ModFluids;
 import com.tamsynnclaydon.mccourse.container.ModContainers;
+import com.tamsynnclaydon.mccourse.entity.BuffaloEntity;
+import com.tamsynnclaydon.mccourse.entity.ModEntityTypes;
 import com.tamsynnclaydon.mccourse.events.ModEvents;
 import com.tamsynnclaydon.mccourse.item.ModItems;
 import com.tamsynnclaydon.mccourse.setup.ClientProxy;
@@ -15,11 +17,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -74,6 +78,10 @@ public class MCCourseMod
 
         proxy.init();
 
+        DeferredWorkQueue.runLater(() -> {
+            GlobalEntityTypeAttributes.put(ModEntityTypes.BUFFALO.get(), BuffaloEntity.setCustomAttributes().create());
+        });
+
         loadConfigs();
     }
 
@@ -100,6 +108,7 @@ public class MCCourseMod
         ModFluids.register();
         ModTileEntities.register();
         ModContainers.register();
+        ModEntityTypes.register();
 
         // register mod events
         MinecraftForge.EVENT_BUS.register(new ModEvents());

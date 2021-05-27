@@ -2,6 +2,7 @@ package com.tamsynnclaydon.mccourse.util;
 
 import com.tamsynnclaydon.mccourse.MCCourseMod;
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityType;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
@@ -32,6 +33,9 @@ public class Registration
     public static final DeferredRegister<ContainerType<?>> CONTAINERS
             = DeferredRegister.create(ForgeRegistries.CONTAINERS, MCCourseMod.MOD_ID);
 
+    public static final DeferredRegister<EntityType<?>> ENTITIES
+            = DeferredRegister.create(ForgeRegistries.ENTITIES, MCCourseMod.MOD_ID);
+
     public static void init()
     {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -40,5 +44,6 @@ public class Registration
         FLUIDS.register(eventBus);
         TILE_ENTITY_TYPES.register(eventBus);
         CONTAINERS.register(eventBus);
+        ENTITIES.register(eventBus);
     }
 }
