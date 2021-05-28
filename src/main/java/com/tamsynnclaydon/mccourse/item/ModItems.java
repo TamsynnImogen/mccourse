@@ -44,6 +44,13 @@ public class ModItems
                                     .defaultMaxDamage(150)
                                     .group(MCCourseMod.COURSE_TAB)));
 
+    public static final RegistryObject<Item> COPPER_CLUB =
+            Registration.ITEMS.register("copper_club",
+                    () -> new CopperClub(ModItemTier.COPPER,2,0f,
+                            new Item.Properties()
+                                    .defaultMaxDamage(150)
+                                    .group(MCCourseMod.COURSE_TAB)));
+
     public static final RegistryObject<Item> COPPER_PICKAXE =
             Registration.ITEMS.register("copper_pickaxe",
                     () -> new PickaxeItem(ModItemTier.COPPER,0,0f,

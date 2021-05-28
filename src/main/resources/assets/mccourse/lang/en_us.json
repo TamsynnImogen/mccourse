@@ -13,6 +13,7 @@
   "item.mccourse.copper_chestplate": "Copper Chestplate",
   "item.mccourse.copper_leggings": "Copper Leggings",
   "item.mccourse.copper_boots": "Copper Boots",
+  "item.mccourse.copper_club": "Copper Club",
 
   "item.mccourse.oil_bucket": "Oil Bucket",
 
@@ -39,6 +40,10 @@
 
   "itemGroup.CourseTab": "Course Tab",
 
-  "entity.mccourse.buffalo": "Buffalo"
+  "entity.mccourse.buffalo": "Buffalo",
+
+  "mccourse.small_explosion": "Small Explosion",
+
+  "enchantment.mccourse.bluntness": "Bluntness"
 
 }

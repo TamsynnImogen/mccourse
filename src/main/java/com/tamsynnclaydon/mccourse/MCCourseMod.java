@@ -3,6 +3,7 @@ package com.tamsynnclaydon.mccourse;
 import com.tamsynnclaydon.mccourse.block.ModBlocks;
 import com.tamsynnclaydon.mccourse.block.ModFluids;
 import com.tamsynnclaydon.mccourse.container.ModContainers;
+import com.tamsynnclaydon.mccourse.enchantment.ModEnchantments;
 import com.tamsynnclaydon.mccourse.entity.BuffaloEntity;
 import com.tamsynnclaydon.mccourse.entity.ModEntityTypes;
 import com.tamsynnclaydon.mccourse.events.ModEvents;
@@ -10,13 +11,13 @@ import com.tamsynnclaydon.mccourse.item.ModItems;
 import com.tamsynnclaydon.mccourse.setup.ClientProxy;
 import com.tamsynnclaydon.mccourse.setup.IProxy;
 import com.tamsynnclaydon.mccourse.setup.ServerProxy;
+import com.tamsynnclaydon.mccourse.sound.ModSoundEvents;
 import com.tamsynnclaydon.mccourse.tileentity.ModTileEntities;
 import com.tamsynnclaydon.mccourse.util.Config;
 import com.tamsynnclaydon.mccourse.util.Registration;
+import com.tamsynnclaydon.mccourse.world.biome.ModSurfaceBuilders;
+import com.tamsynnclaydon.mccourse.world.biome.ModBiomes;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -25,21 +26,15 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(MCCourseMod.MOD_ID)
@@ -106,9 +101,15 @@ public class MCCourseMod
         ModItems.register();
         ModBlocks.register();
         ModFluids.register();
+
+        ModBiomes.register();
+        ModSurfaceBuilders.register();
+        ModSoundEvents.register();
+
         ModTileEntities.register();
         ModContainers.register();
         ModEntityTypes.register();
+        ModEnchantments.register();
 
         // register mod events
         MinecraftForge.EVENT_BUS.register(new ModEvents());
