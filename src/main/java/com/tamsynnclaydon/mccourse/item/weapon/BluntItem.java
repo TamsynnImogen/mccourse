@@ -22,7 +22,6 @@ import net.minecraft.world.World;
 
 public class BluntItem extends TieredItem implements IVanishable
 {
-
     private final float attackDamage;
     /** Modifiers applied when the item is in the mainhand of a user. */
     private final Multimap<Attribute, AttributeModifier> attributeModifiers;
