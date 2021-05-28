@@ -10,3 +10,4 @@ public class CopperClub extends BluntItem
         super(tier, attackDamageIn, attackSpeedIn, builderIn);
     }
 }
+

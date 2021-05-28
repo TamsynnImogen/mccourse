@@ -8,8 +8,8 @@ import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.SwordItem;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 
@@ -23,7 +23,6 @@ public class BluntEnchantment extends Enchantment
     protected BluntEnchantment(Rarity rarityIn, EnchantmentType typeIn, int damageType,
                                EquipmentSlotType... slots)
     {
-
         super(rarityIn, typeIn, slots);
         this.damageType = damageType;
     }
@@ -43,7 +42,6 @@ public class BluntEnchantment extends Enchantment
      * Returns the maximum level that the enchantment can have.
      */
     public int getMaxLevel() {
-
         return 5;
     }
 
@@ -72,7 +70,7 @@ public class BluntEnchantment extends Enchantment
      * Determines if this enchantment can be applied to a specific ItemStack.
      */
     public boolean canApply(ItemStack stack) {
-        return stack.getItem() instanceof BluntItem ? true : super.canApply(stack);
+       return stack.getItem() instanceof BluntItem ? true : super.canApply(stack);
     }
 
     /**
