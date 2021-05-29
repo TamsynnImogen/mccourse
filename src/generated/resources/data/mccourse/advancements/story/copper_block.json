@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:story/iron_tools",
+  "display": {
+    "icon": {
+      "item": "mccourse:copper_block"
+    },
+    "title": {
+      "translate": "advancement.story.copper_block.title"
+    },
+    "description": {
+      "translate": "advancement.story.copper_block.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "copper_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mccourse:copper_block"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "copper_block"
+    ]
+  ]
+}
