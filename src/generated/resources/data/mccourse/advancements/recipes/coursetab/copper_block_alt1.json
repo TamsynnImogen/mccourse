@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "mccourse:copper_block_alt1"
+    ]
+  },
+  "criteria": {
+    "copper_wire": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mccourse:copper_wire"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "mccourse:copper_block_alt1"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "copper_wire",
+      "has_the_recipe"
+    ]
+  ]
+}
