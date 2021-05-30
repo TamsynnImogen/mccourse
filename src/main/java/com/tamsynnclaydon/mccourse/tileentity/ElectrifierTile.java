@@ -1,7 +1,6 @@
 package com.tamsynnclaydon.mccourse.tileentity;
 
 import com.tamsynnclaydon.mccourse.item.ModItems;
-import com.tamsynnclaydon.mccourse.util.Config;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -12,6 +11,8 @@ import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
@@ -21,12 +22,13 @@ import javax.annotation.Nullable;
 
 public class ElectrifierTile extends TileEntity implements ITickableTileEntity
 {
-    private  final ItemStackHandler itemHandler = createHandler();
-
-    private int tick = 0;
-    private int energyLevel = 0;
+    private final ItemStackHandler itemHandler = createHandler();
+    private final CustomEnergyStorage energyStorage = createEnergyStorage();
 
     private final LazyOptional<IItemHandler> handler = LazyOptional.of(() -> itemHandler);
+    private final LazyOptional<IEnergyStorage> energyHandler = LazyOptional.of(() -> energyStorage);
+
+    private int tick = 0;
 
     public ElectrifierTile(TileEntityType<?> tileEntityTypeIn)
     {
@@ -38,39 +40,60 @@ public class ElectrifierTile extends TileEntity implements ITickableTileEntity
         this(ModTileEntities.ELECTRIFIER_TILE_ENTITY.get());
     }
 
+    private CustomEnergyStorage createEnergyStorage()
+    {
+        return new CustomEnergyStorage(100, 0) {
+            @Override
+            protected void onEnergyChanged()
+            {
+                markDirty();
+            }
+        };
+    }
+
+    @Override
+    public void remove() {
+        super.remove();
+        handler.invalidate();
+        energyHandler.invalidate();
+    }
+
     @Override
     public void tick()
     {
+        if(world.isRemote) {
+            return;
+        }
+
         tick++;
-        if(tick > 10) // should be configurable (Config.ELECTRIFIER_CONVERSION.get())
+        if(tick > 10) // should be configurable
         {
-            if (this.itemHandler.getStackInSlot(0).getItem() == Items.DIAMOND && this.energyLevel < 64)
+            if(this.itemHandler.getStackInSlot(0).getItem() == Items.DIAMOND && energyStorage.getEnergyStored() < 64)
             {
-                itemHandler.extractItem(0,1,false); // "deletes" the item
-                energyLevel++;
+                itemHandler.extractItem(0, 1, false); // "deletes" the item
+                energyStorage.generatePower(1);
             }
 
             if(this.itemHandler.getStackInSlot(1).getItem() == ModItems.COPPER_WIRE.get()
-                && this.energyLevel > 0 && this.itemHandler.getStackInSlot(2).getCount() < 64) //Config.ELECTRIFIER_MAX_ENERGY.get()
+                    && energyStorage.getEnergyStored() > 0 && this.itemHandler.getStackInSlot(2).getCount() < 64)
             {
-                itemHandler.extractItem(1,1,false);
+                itemHandler.extractItem(1, 1, false);
                 itemHandler.insertItem(2, new ItemStack(Items.EMERALD, 1), false);
-                energyLevel--;
+                energyStorage.consumePower(1);
             }
-            tick = 0;
-        }
-    }
 
-    public int getEnergyLevel()
-    {
-        return energyLevel;
+            tick = 0;
+            markDirty();
+        }
     }
 
     @Override
     public void read(BlockState state, CompoundNBT tag)
     {
         itemHandler.deserializeNBT(tag.getCompound("inv"));
+        energyStorage.deserializeNBT(tag.getCompound("energy"));
 
+        tick = tag.getInt("counter");
         super.read(state, tag);
     }
 
@@ -78,7 +101,9 @@ public class ElectrifierTile extends TileEntity implements ITickableTileEntity
     public CompoundNBT write(CompoundNBT tag)
     {
         tag.put("inv", itemHandler.serializeNBT());
+        tag.put("energy", energyStorage.serializeNBT());
 
+        tag.putInt("counter", tick);
         return super.write(tag);
     }
 
@@ -92,6 +117,7 @@ public class ElectrifierTile extends TileEntity implements ITickableTileEntity
                 markDirty();
             }
 
+            @Override
             public boolean isItemValid(int slot, @Nonnull ItemStack stack)
             {
                 switch (slot)
@@ -114,7 +140,6 @@ public class ElectrifierTile extends TileEntity implements ITickableTileEntity
 
                 return super.insertItem(slot, stack, simulate);
             }
-
         };
     }
 
@@ -125,8 +150,12 @@ public class ElectrifierTile extends TileEntity implements ITickableTileEntity
         {
             return handler.cast();
         }
+        else if(capability == CapabilityEnergy.ENERGY)
+        {
+            return energyHandler.cast();
+        }
 
         return super.getCapability(capability, side);
     }
-
 }
+
