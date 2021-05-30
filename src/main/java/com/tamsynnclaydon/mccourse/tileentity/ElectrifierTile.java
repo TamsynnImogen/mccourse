@@ -1,5 +1,6 @@
 package com.tamsynnclaydon.mccourse.tileentity;
 
+import com.tamsynnclaydon.mccourse.block.ModBlocks;
 import com.tamsynnclaydon.mccourse.item.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
