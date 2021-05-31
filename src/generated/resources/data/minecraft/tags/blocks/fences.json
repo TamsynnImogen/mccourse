@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "mccourse:copper_fence",
     "#minecraft:wooden_fences",
     "minecraft:nether_brick_fence"
   ]

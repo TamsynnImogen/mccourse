@@ -17,6 +17,7 @@ import com.tamsynnclaydon.mccourse.util.Config;
 import com.tamsynnclaydon.mccourse.util.Registration;
 import com.tamsynnclaydon.mccourse.world.biome.ModSurfaceBuilders;
 import com.tamsynnclaydon.mccourse.world.biome.ModBiomes;
+import com.tamsynnclaydon.mccourse.world.dimension.ModDimensions;
 import net.minecraft.block.Block;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.ItemGroup;
@@ -110,6 +111,8 @@ public class MCCourseMod
         ModContainers.register();
         ModEntityTypes.register();
         ModEnchantments.register();
+
+        ModDimensions.register();
 
         // register mod events
         MinecraftForge.EVENT_BUS.register(new ModEvents());

@@ -54,7 +54,7 @@ df61716e1ac18ac14aec90b5380f2912d003d3c6 data/minecraft/tags/blocks/crimson_stem
 09f673d40ce1656aa6762c7648373e1b2bca6245 data/minecraft/tags/blocks/dragon_immune.json
 b9632e149fc25c3e732ed4c80577c3b88cba171d data/minecraft/tags/blocks/enderman_holdable.json
 08f309abe5bee3cb77fa78626d0d11576b95eb31 data/minecraft/tags/blocks/fence_gates.json
-8f291eb61c0fb314c0ad9c0253bcabbf93675a93 data/minecraft/tags/blocks/fences.json
+d018ef3978f89616acf8e5d3e38b38241f2d22dc data/minecraft/tags/blocks/fences.json
 515488fb4f5e6fdabfa79481571614283c3741a9 data/minecraft/tags/blocks/fire.json
 e741db23dc6f63187460b39e2fd4b5989f6c268c data/minecraft/tags/blocks/flower_pots.json
 14b8d5f845b0c48e3c62466258c5a1d508c59da5 data/minecraft/tags/blocks/flowers.json
@@ -130,7 +130,7 @@ cdebe984cd6b91d10ac80b6a176d864ac3cffb83 data/minecraft/tags/items/creeper_drop_
 df61716e1ac18ac14aec90b5380f2912d003d3c6 data/minecraft/tags/items/crimson_stems.json
 66d8f495d38fd65a5d878009e381e229278a2e0e data/minecraft/tags/items/dark_oak_logs.json
 41f37916879608eed7f4602ce79a1b21a14d0434 data/minecraft/tags/items/doors.json
-8f291eb61c0fb314c0ad9c0253bcabbf93675a93 data/minecraft/tags/items/fences.json
+d018ef3978f89616acf8e5d3e38b38241f2d22dc data/minecraft/tags/items/fences.json
 abff0f8ecafe81e302c6a32bb4b24f6d213c4fcf data/minecraft/tags/items/fishes.json
 14b8d5f845b0c48e3c62466258c5a1d508c59da5 data/minecraft/tags/items/flowers.json
 62c882e7cfd5cd28d7640fe60c94e6817afb811e data/minecraft/tags/items/gold_ores.json

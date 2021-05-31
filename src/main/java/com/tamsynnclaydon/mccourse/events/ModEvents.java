@@ -1,5 +1,7 @@
 package com.tamsynnclaydon.mccourse.events;
 
+import com.tamsynnclaydon.mccourse.command.ReturnHomeCommand;
+import com.tamsynnclaydon.mccourse.command.SetHomeCommand;
 import com.tamsynnclaydon.mccourse.item.ModItems;
 import com.tamsynnclaydon.mccourse.util.Config;
 import net.minecraft.entity.LivingEntity;
@@ -13,10 +15,12 @@ import net.minecraft.potion.Effects;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerWakeUpEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.server.command.ConfigCommand;
 import org.apache.logging.log4j.LogManager;
 
 import java.util.Collection;
@@ -48,6 +52,15 @@ public class ModEvents
                 }
             }
         }
+    }
+
+    @SubscribeEvent
+    public void onCommandsRegister(RegisterCommandsEvent event)
+    {
+        new SetHomeCommand(event.getDispatcher());
+        new ReturnHomeCommand(event.getDispatcher());
+
+        ConfigCommand.register(event.getDispatcher());
     }
 
     @SubscribeEvent

@@ -1,6 +1,8 @@
 package com.tamsynnclaydon.mccourse.block;
 
 import com.tamsynnclaydon.mccourse.MCCourseMod;
+import com.tamsynnclaydon.mccourse.item.BigChestItemStackTileEntityRenderer;
+import com.tamsynnclaydon.mccourse.tileentity.ModTileEntities;
 import com.tamsynnclaydon.mccourse.util.Registration;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -8,11 +10,9 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
-
 import java.util.function.Supplier;
 
-public class ModBlocks
-{
+public class ModBlocks {
     public static final RegistryObject<Block> COPPER_BLOCK = register("copper_block",
             () -> new Block(AbstractBlock.Properties.create(Material.IRON)
                     .hardnessAndResistance(3f, 10f).sound(SoundType.METAL)));
@@ -22,25 +22,29 @@ public class ModBlocks
                     .hardnessAndResistance(3f, 10f)
                     .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().sound(SoundType.STONE)));
 
+    public static final RegistryObject<Block> BIG_CHEST = registerTileEntity("big_chest",
+            () -> new BigChestBlock(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(3f, 10f), () -> ModTileEntities.BIG_CHEST_TILE_ENTITY.get()));
+
     public static final RegistryObject<Block> COPPER_STAIRS =
-            register( "copper_stairs", () -> new StairsBlock(() -> ModBlocks.COPPER_BLOCK.get().getDefaultState(),
+            register("copper_stairs", () -> new StairsBlock(() -> ModBlocks.COPPER_BLOCK.get().getDefaultState(),
                     AbstractBlock.Properties.create(Material.IRON)));
 
     public static final RegistryObject<Block> COPPER_FENCE =
-            register( "copper_fence", () -> new FenceBlock(AbstractBlock.Properties.create(Material.IRON)));
+            register("copper_fence", () -> new FenceBlock(AbstractBlock.Properties.create(Material.IRON)));
 
     public static final RegistryObject<Block> COPPER_FENCE_GATE =
-            register( "copper_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.create(Material.IRON)));
+            register("copper_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.create(Material.IRON)));
 
     public static final RegistryObject<Block> COPPER_BUTTON =
-            register( "copper_button", () -> new StoneButtonBlock(AbstractBlock.Properties.create(Material.IRON)));
+            register("copper_button", () -> new StoneButtonBlock(AbstractBlock.Properties.create(Material.IRON)));
 
     public static final RegistryObject<Block> COPPER_PRESSURE_PLATE =
-            register( "copper_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
+            register("copper_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
                     AbstractBlock.Properties.create(Material.IRON)));
 
     public static final RegistryObject<Block> COPPER_SLAB =
-            register( "copper_slab", () -> new SlabBlock(AbstractBlock.Properties.create(Material.IRON)));
+            register("copper_slab", () -> new SlabBlock(AbstractBlock.Properties.create(Material.IRON)));
 
 
     public static final RegistryObject<Block> ZUCCINI_CROP =
@@ -65,13 +69,20 @@ public class ModBlocks
                     () -> new RedwoodTree(), AbstractBlock.Properties.from(Blocks.OAK_SAPLING)
             ));
 
-    public static void register() { }
+    public static void register() {
+    }
 
-    private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block)
-    {
+    private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = Registration.BLOCKS.register(name, block);
         Registration.ITEMS.register(name, () -> new BlockItem(toReturn.get(),
                 new Item.Properties().group(MCCourseMod.COURSE_TAB)));
+        return toReturn;
+    }
+
+    private static <T extends Block> RegistryObject<T> registerTileEntity(String name, Supplier<T> block) {
+        RegistryObject<T> toReturn = Registration.BLOCKS.register(name, block);
+        Registration.ITEMS.register(name, () -> new BlockItem(toReturn.get(),
+                new Item.Properties().group(MCCourseMod.COURSE_TAB).setISTER(() -> BigChestItemStackTileEntityRenderer::new)));
         return toReturn;
     }
 }

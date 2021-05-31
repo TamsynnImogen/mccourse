@@ -38,9 +38,13 @@ public class ModLanguageProvider extends LanguageProvider
                 add("block.mccourse.copper_block", "Copper Block");
                 add("block.mccourse.copper_ore", "Copper Ore");
 
+                add("block.mccourse.electrifier", "Electrifier");
+
                 add("itemGroup.coursetab", "Course Tab");
 
                 add("entity.mccourse.buffalo", "Buffalo");
+
+                add("screen.mccourse.bigchest", "Big Chest");
 
                 add("mccourse.small_explosion", "Small Explosion");
 

@@ -3,6 +3,7 @@
   "advancement.story.copper_block.title": "Coppering",
   "block.mccourse.copper_block": "Copper Block",
   "block.mccourse.copper_ore": "Copper Ore",
+  "block.mccourse.electrifier": "Electrifier",
   "block.mccourse.zuccini_crop": "Zuccini Seeds",
   "entity.mccourse.buffalo": "Buffalo",
   "item.mccourse.copper_axe": "Copper Axe",
@@ -18,5 +19,6 @@
   "item.mccourse.copper_wire": "Copper Wire",
   "item.mccourse.coppered_apple": "Coppered Apple",
   "itemGroup.coursetab": "Course Tab",
-  "mccourse.small_explosion": "Small Explosion"
+  "mccourse.small_explosion": "Small Explosion",
+  "screen.mccourse.bigchest": "Big Chest"
 }
