@@ -81,6 +81,7 @@ public class BigChestTile extends ChestTileEntity implements IChestLid, ITickabl
         return compound;
     }
 
+    @Override
     public void tick() {
         int i = this.pos.getX();
         int j = this.pos.getY();

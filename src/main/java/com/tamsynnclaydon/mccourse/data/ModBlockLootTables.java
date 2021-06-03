@@ -32,6 +32,7 @@ public class ModBlockLootTables extends BlockLootTables
         this.registerDropSelfLootTable(ModBlocks.COPPER_BLOCK.get());
         this.registerDropSelfLootTable(ModBlocks.COPPER_ORE.get());
         this.registerDropSelfLootTable(ModBlocks.REDWOOD_LOG.get());
+        this.registerDropSelfLootTable(ModBlocks.STRIPPED_REDWOOD_LOG.get());
         this.registerDropSelfLootTable(ModBlocks.REDWOOD_PLANK.get());
         this.registerDropSelfLootTable(ModBlocks.REDWOOD_LEAVES.get());
         this.registerDropSelfLootTable(ModBlocks.REDWOOD_SAPLING.get());
@@ -42,6 +43,7 @@ public class ModBlockLootTables extends BlockLootTables
         this.registerDropSelfLootTable(ModBlocks.COPPER_STAIRS.get());
         this.registerDropSelfLootTable(ModBlocks.COPPER_PRESSURE_PLATE.get());
         this.registerDropSelfLootTable(ModBlocks.ELECTRIFIER.get());
+        this.registerDropSelfLootTable(ModBlocks.BIG_CHEST.get());
     }
 
     @Override

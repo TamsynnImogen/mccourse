@@ -1,6 +1,6 @@
 cc40742da7aea4850ea232650fa604e42cf0a779 assets/mccourse/blockstates/copper_block.json
 2ee388ebbe133c121271e50031275a285dc51ca1 assets/mccourse/blockstates/copper_ore.json
-3005cd0a5ab3df2b0d58bf0e3970284492012c90 assets/mccourse/lang/en_us.json
+4d6a3d5ced74c5ae375fdd3cb1c9459b63a0e6ed assets/mccourse/lang/en_us.json
 95e06944738df70a79c33c85500e3f860217f258 assets/mccourse/models/block/copper_block.json
 e4627e955bfde5f75f5534f525120476516ef721 assets/mccourse/models/block/copper_ore.json
 67f424e9b313b0831831e676e40c30dda37ddc53 assets/mccourse/models/item/copper_block.json
@@ -13,6 +13,7 @@ b8f014889bac5eac84013ceecf4736ef38c7f471 assets/mccourse/models/item/copper_ore.
 a5a005f5c6e5b5f552973b8a6402fdf03775e1a3 data/mccourse/advancements/recipes/coursetab/copper_block.json
 868b299827fa99e2656730aaa39efaee1900ebde data/mccourse/advancements/recipes/coursetab/copper_block_alt1.json
 576ad152a7fe7282810aebc0f8355d0bfc6d8736 data/mccourse/advancements/story/copper_block.json
+85dea2f7e14ca6bd194917b7f4942597a6e193fd data/mccourse/loot_tables/blocks/big_chest.json
 033f33a9a39367014e9cfe9a2d84ee7536a1f44d data/mccourse/loot_tables/blocks/copper_block.json
 a4cf99ff5a37c1ec33c0ac1151a6aa94fb0b1e15 data/mccourse/loot_tables/blocks/copper_button.json
 cd2444f69bbc3b99068c1aaffe8a095ab888efcb data/mccourse/loot_tables/blocks/copper_fence.json
@@ -26,6 +27,7 @@ dd38bd91f080f6ae6ac5e0661a369298cb0f1113 data/mccourse/loot_tables/blocks/redwoo
 17e5015f5eb4c2dce407760f8b56e01cf298de82 data/mccourse/loot_tables/blocks/redwood_log.json
 9b252179486519f201b42e4fd425cd7bafcdba64 data/mccourse/loot_tables/blocks/redwood_planks.json
 363aef2818c3f6cf3e6e3b5d7b77073236719035 data/mccourse/loot_tables/blocks/redwood_sapling.json
+39b0e936aca7dd062ef82ba6ff085100fd337af6 data/mccourse/loot_tables/blocks/stripped_redwood_log.json
 595a220c941c46a04c0fc969f2c017ccde0e524f data/mccourse/loot_tables/blocks/zuccini_crop.json
 5bedfc21161aab714859d6058f2455e22fc2a1ad data/mccourse/recipes/copper_block.json
 8e47ad82a4c380cbb006d1793057bd0bf0d422a1 data/mccourse/recipes/copper_block_alt1.json

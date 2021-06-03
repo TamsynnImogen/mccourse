@@ -1,6 +1,7 @@
 package com.tamsynnclaydon.mccourse.block;
 
 import com.tamsynnclaydon.mccourse.MCCourseMod;
+import com.tamsynnclaydon.mccourse.compat.StrippableBlock;
 import com.tamsynnclaydon.mccourse.item.BigChestItemStackTileEntityRenderer;
 import com.tamsynnclaydon.mccourse.tileentity.ModTileEntities;
 import com.tamsynnclaydon.mccourse.util.Registration;
@@ -58,8 +59,15 @@ public class ModBlocks {
     public static final RegistryObject<Block> REDWOOD_PLANK = register("redwood_planks",
             () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS)));
 
+    public static final RegistryObject<Block> STRIPPED_REDWOOD_LOG = register("stripped_redwood_log",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_LOG)));
+
     public static final RegistryObject<Block> REDWOOD_LOG = register("redwood_log",
-            () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.OAK_WOOD)));
+            ()-> new StrippableBlock(STRIPPED_REDWOOD_LOG.get().getDefaultState(),
+                    AbstractBlock.Properties.create(Material.WOOD)
+                            .hardnessAndResistance(0.5f,2.0f)
+                            .harvestTool(ToolType.AXE)
+                            .harvestLevel(0)));
 
     public static final RegistryObject<Block> REDWOOD_LEAVES = register("redwood_leaves",
             () -> new LeavesBlock(AbstractBlock.Properties.from(Blocks.OAK_LEAVES)));
