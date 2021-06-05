@@ -29,6 +29,9 @@ public class ClientProxy implements IProxy
     {
         RenderTypeLookup.setRenderLayer(ModBlocks.ZUCCINI_CROP.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.REDWOOD_SAPLING.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.COPPER_BARS.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.COPPER_DOOR.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.COPPER_TRAPDOOR.get(), RenderType.getCutout());
 
         ScreenManager.registerFactory(ModContainers.ELECTRIFIER_CONTAINER.get(), ElectrifierScreen::new);
         ScreenManager.registerFactory(ModContainers.BIGCHEST_CONTAINER.get(), BigChestScreen::new);

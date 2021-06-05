@@ -38,7 +38,10 @@ public class ModBlockLootTables extends BlockLootTables
         this.registerDropSelfLootTable(ModBlocks.REDWOOD_SAPLING.get());
 
         this.registerDropSelfLootTable(ModBlocks.COPPER_FENCE.get());
+        this.registerDropSelfLootTable(ModBlocks.COPPER_BARS.get());
+        this.registerDropSelfLootTable(ModBlocks.COPPER_DOOR.get());
         this.registerDropSelfLootTable(ModBlocks.COPPER_FENCE_GATE.get());
+        this.registerDropSelfLootTable(ModBlocks.COPPER_TRAPDOOR.get());
         this.registerDropSelfLootTable(ModBlocks.COPPER_BUTTON.get());
         this.registerDropSelfLootTable(ModBlocks.COPPER_STAIRS.get());
         this.registerDropSelfLootTable(ModBlocks.COPPER_PRESSURE_PLATE.get());

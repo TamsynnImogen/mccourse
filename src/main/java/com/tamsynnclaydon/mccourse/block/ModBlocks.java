@@ -37,6 +37,15 @@ public class ModBlocks {
     public static final RegistryObject<Block> COPPER_FENCE_GATE =
             register("copper_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.create(Material.IRON)));
 
+    public static final RegistryObject<Block> COPPER_DOOR =
+            register("copper_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.IRON)));
+
+    public static final RegistryObject<Block> COPPER_TRAPDOOR =
+            register("copper_trapdoor", () -> new TrapDoorBlock(AbstractBlock.Properties.create(Material.IRON)));
+
+    public static final RegistryObject<Block> COPPER_BARS =
+            register("copper_bars", () -> new PaneBlock(AbstractBlock.Properties.create(Material.IRON)));
+
     public static final RegistryObject<Block> COPPER_BUTTON =
             register("copper_button", () -> new StoneButtonBlock(AbstractBlock.Properties.create(Material.IRON)));
 
