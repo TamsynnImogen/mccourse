@@ -60,24 +60,4 @@ public class CopperOre extends Block
 
             return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
         }
-
-    /*
-    public CopperOre(Properties properties)
-    {
-        super(properties);
-    }
-
-    @Override
-    public void onPlayerDestroy(IWorld worldIn, BlockPos pos, BlockState state)
-    {
-        if(worldIn.isRemote())
-        {
-            Minecraft.getInstance().player.playSound(ModSoundEvents.SMALL_EXPLOSION.get(),
-                    1f, 1f);
-        }
-
-        super.onPlayerDestroy(worldIn, pos, state);
-    }
-
-     */
 }

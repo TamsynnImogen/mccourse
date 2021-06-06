@@ -9,6 +9,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemTier;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import java.util.function.Supplier;
@@ -38,10 +39,10 @@ public class ModBlocks {
             register("copper_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.create(Material.IRON)));
 
     public static final RegistryObject<Block> COPPER_DOOR =
-            register("copper_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.IRON)));
+            register("copper_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.IRON).notSolid()));
 
     public static final RegistryObject<Block> COPPER_TRAPDOOR =
-            register("copper_trapdoor", () -> new TrapDoorBlock(AbstractBlock.Properties.create(Material.IRON)));
+            register("copper_trapdoor", () -> new TrapDoorBlock(AbstractBlock.Properties.create(Material.IRON).notSolid()));
 
     public static final RegistryObject<Block> COPPER_BARS =
             register("copper_bars", () -> new PaneBlock(AbstractBlock.Properties.create(Material.IRON)));
