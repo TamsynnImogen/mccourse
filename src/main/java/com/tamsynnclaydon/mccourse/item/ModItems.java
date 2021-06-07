@@ -72,7 +72,7 @@ public class ModItems
                     () -> new AxeItem(ModItemTier.COPPER,0,0f,
                             new Item.Properties()
                                     .defaultMaxDamage(150)
-                                    .addToolType(ToolType.AXE, 2)
+                                    .addToolType(ToolType.AXE, 1)
                                     .group(MCCourseMod.COURSE_TAB)));
 
     /* Armour */
@@ -193,7 +193,7 @@ public class ModItems
 
     public enum ModItemTier implements IItemTier
     {
-        COPPER(2, 150, 2.5f, 0f, 15,
+        COPPER(1, 150, 2.5f, 0f, 15,
                 Ingredient.fromStacks(new ItemStack(ModItems.COPPER_INGOT.get())));
 
         private final int harvestLevel;

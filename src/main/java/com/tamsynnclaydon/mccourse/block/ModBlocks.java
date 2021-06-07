@@ -1,6 +1,7 @@
 package com.tamsynnclaydon.mccourse.block;
 
 import com.tamsynnclaydon.mccourse.MCCourseMod;
+import com.tamsynnclaydon.mccourse.block.config.cropsConfig;
 import com.tamsynnclaydon.mccourse.compat.StrippableBlock;
 import com.tamsynnclaydon.mccourse.item.BigChestItemStackTileEntityRenderer;
 import com.tamsynnclaydon.mccourse.tileentity.ModTileEntities;
@@ -22,7 +23,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> COPPER_ORE = register("copper_ore",
             () -> new CopperOre(AbstractBlock.Properties.create(Material.ROCK)
                     .hardnessAndResistance(3f, 10f)
-                    .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().sound(SoundType.STONE)));
+                    .harvestLevel(1)
+                    .harvestTool(ToolType.PICKAXE).setRequiresTool().sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> BIG_CHEST = registerTileEntity("big_chest",
             () -> new BigChestBlock(AbstractBlock.Properties.create(Material.ROCK)
@@ -61,6 +63,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> ZUCCINI_CROP =
             Registration.BLOCKS.register("zuccini_crop",
                     () -> new ZucciniCrop(AbstractBlock.Properties.from(Blocks.WHEAT)));
+
 
     public static final RegistryObject<Block> ELECTRIFIER =
             register("electrifier", () -> new Electrifier(AbstractBlock.Properties.create(Material.IRON)
