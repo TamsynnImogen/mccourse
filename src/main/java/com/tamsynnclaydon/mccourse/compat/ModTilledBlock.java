@@ -10,9 +10,9 @@ import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nullable;
 
-public class ModtilledBlock extends RotatedPillarBlock {
+public class ModTilledBlock extends RotatedPillarBlock {
     private final BlockState tilled;
-    public ModtilledBlock(BlockState state, Properties properties) {
+    public ModTilledBlock(BlockState state, Properties properties) {
         super(properties);
         this.tilled = state;
     }

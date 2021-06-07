@@ -52,10 +52,13 @@ public class Registration
     public static final DeferredRegister<Enchantment> ENCHANTMENTS
             = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, MCCourseMod.MOD_ID);
 
+    public static final DeferredRegister<Block> VANILLA_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, "minecraft");
+
     public static void init()
     {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         BLOCKS.register(eventBus);
+        VANILLA_BLOCKS.register(eventBus);
         ITEMS.register(eventBus);
         FLUIDS.register(eventBus);
         TILE_ENTITY_TYPES.register(eventBus);

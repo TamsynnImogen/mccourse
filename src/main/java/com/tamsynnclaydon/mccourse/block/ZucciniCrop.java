@@ -3,7 +3,6 @@ package com.tamsynnclaydon.mccourse.block;
 import com.tamsynnclaydon.mccourse.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.CropsBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.Direction;
@@ -14,12 +13,9 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 
-import java.util.Arrays;
-
 public class ZucciniCrop extends CropsBlock
 {
     private static final VoxelShape[] SHAPES = new VoxelShape[]{Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
-
     public ZucciniCrop(Properties builder)
     {
         super(builder);
@@ -40,8 +36,9 @@ public class ZucciniCrop extends CropsBlock
     public boolean isValidPosition(BlockState stateIn, IWorldReader worldIn, BlockPos pos)
     {
         BlockState state = worldIn.getBlockState(pos.down());
+        Block block = state.getBlock();
 
-
+        if (block.equals(ModBlocks.FERTILE_SOUL_SOIL.get()))
         {
             BlockPos blockpos = pos.down();
 
@@ -57,10 +54,10 @@ public class ZucciniCrop extends CropsBlock
 
             return false;
         }
+        else
+        {
+            return false;
+        }
     }
-    protected boolean canGrowOn(Block blockIn)
-    {
-        String name = blockIn.getRegistryName().toString();
-        return Arrays.asList(Blocks.SOUL_SOIL).contains(name);
-    }
+
 }

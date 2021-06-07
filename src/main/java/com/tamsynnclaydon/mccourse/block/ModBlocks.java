@@ -1,8 +1,10 @@
 package com.tamsynnclaydon.mccourse.block;
 
 import com.tamsynnclaydon.mccourse.MCCourseMod;
-import com.tamsynnclaydon.mccourse.block.config.cropsConfig;
-import com.tamsynnclaydon.mccourse.compat.StrippableBlock;
+import com.tamsynnclaydon.mccourse.block.farmingconfigs.Config;
+import com.tamsynnclaydon.mccourse.block.farmingconfigs.Configs;
+import com.tamsynnclaydon.mccourse.compat.ModStrippedBlock;
+import com.tamsynnclaydon.mccourse.compat.ModTilledBlock;
 import com.tamsynnclaydon.mccourse.item.BigChestItemStackTileEntityRenderer;
 import com.tamsynnclaydon.mccourse.tileentity.ModTileEntities;
 import com.tamsynnclaydon.mccourse.util.Registration;
@@ -10,12 +12,12 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemTier;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import java.util.function.Supplier;
 
-public class ModBlocks {
+public class ModBlocks extends Blocks{
+
     public static final RegistryObject<Block> COPPER_BLOCK = register("copper_block",
             () -> new Block(AbstractBlock.Properties.create(Material.IRON)
                     .hardnessAndResistance(3f, 10f).sound(SoundType.METAL)));
@@ -64,7 +66,6 @@ public class ModBlocks {
             Registration.BLOCKS.register("zuccini_crop",
                     () -> new ZucciniCrop(AbstractBlock.Properties.from(Blocks.WHEAT)));
 
-
     public static final RegistryObject<Block> ELECTRIFIER =
             register("electrifier", () -> new Electrifier(AbstractBlock.Properties.create(Material.IRON)
                     .hardnessAndResistance(4f).harvestTool(ToolType.PICKAXE)));
@@ -76,10 +77,17 @@ public class ModBlocks {
             () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_LOG)));
 
     public static final RegistryObject<Block> REDWOOD_LOG = register("redwood_log",
-            ()-> new StrippableBlock(STRIPPED_REDWOOD_LOG.get().getDefaultState(),
+            ()-> new ModStrippedBlock(STRIPPED_REDWOOD_LOG.get().getDefaultState(),
                     AbstractBlock.Properties.create(Material.WOOD)
                             .hardnessAndResistance(0.5f,2.0f)
                             .harvestTool(ToolType.AXE)
+                            .harvestLevel(0)));
+
+    public static final RegistryObject<Block> FERTILE_SOUL_SOIL = register("fertile_soul_soil",
+            ()-> new ModTilledBlock(FARMLAND.getDefaultState(),
+                    AbstractBlock.Properties.create(Material.EARTH)
+                            .hardnessAndResistance(0.5f,0.5f)
+                            .harvestTool(ToolType.HOE)
                             .harvestLevel(0)));
 
     public static final RegistryObject<Block> REDWOOD_LEAVES = register("redwood_leaves",
