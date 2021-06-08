@@ -39,6 +39,7 @@ public class ModLanguageProvider extends LanguageProvider
                 add("block.mccourse.copper_ore", "Copper Ore");
 
                 add("block.mccourse.electrifier", "Electrifier");
+                add("block.mccourse.fertile_soul_soil", "Fertile Soul Soil");
 
                 add("itemGroup.coursetab", "Course Tab");
 

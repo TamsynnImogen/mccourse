@@ -40,20 +40,8 @@ public class ZucciniCrop extends CropsBlock
 
         if (block.equals(ModBlocks.FERTILE_SOUL_SOIL.get()))
         {
-            BlockPos blockpos = pos.down();
-
-            for (Direction direction : Direction.Plane.HORIZONTAL)
-            {
-                BlockState blockstate = worldIn.getBlockState(blockpos.offset(direction));
-
-                if (blockstate.getMaterial() == Material.LAVA)
-                {
                     return true;
                 }
-            }
-
-            return false;
-        }
         else
         {
             return false;

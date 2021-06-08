@@ -1,6 +1,6 @@
 cc40742da7aea4850ea232650fa604e42cf0a779 assets/mccourse/blockstates/copper_block.json
 2ee388ebbe133c121271e50031275a285dc51ca1 assets/mccourse/blockstates/copper_ore.json
-4d6a3d5ced74c5ae375fdd3cb1c9459b63a0e6ed assets/mccourse/lang/en_us.json
+69c2cb31c27ec85078f2e0c49a9e3ed590c5c3ff assets/mccourse/lang/en_us.json
 95e06944738df70a79c33c85500e3f860217f258 assets/mccourse/models/block/copper_block.json
 e4627e955bfde5f75f5534f525120476516ef721 assets/mccourse/models/block/copper_ore.json
 67f424e9b313b0831831e676e40c30dda37ddc53 assets/mccourse/models/item/copper_block.json
@@ -26,6 +26,7 @@ d04ed76a470db64d8220e57674b9ae6118c1bf21 data/mccourse/loot_tables/blocks/copper
 d169e70635b3d048fc51918071a06d000410f62a data/mccourse/loot_tables/blocks/copper_stairs.json
 7f294a7404433345877242ea3a2ebd0b6f349adb data/mccourse/loot_tables/blocks/copper_trapdoor.json
 f4e023300a321daa4ba17e9640f75684a1eb4294 data/mccourse/loot_tables/blocks/electrifier.json
+38ad0b5368690d324d2880aedc77dcf3356bc1ca data/mccourse/loot_tables/blocks/fertile_soul_soil.json
 dd38bd91f080f6ae6ac5e0661a369298cb0f1113 data/mccourse/loot_tables/blocks/redwood_leaves.json
 17e5015f5eb4c2dce407760f8b56e01cf298de82 data/mccourse/loot_tables/blocks/redwood_log.json
 9b252179486519f201b42e4fd425cd7bafcdba64 data/mccourse/loot_tables/blocks/redwood_planks.json

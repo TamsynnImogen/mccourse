@@ -1,8 +1,6 @@
 package com.tamsynnclaydon.mccourse.block;
 
 import com.tamsynnclaydon.mccourse.MCCourseMod;
-import com.tamsynnclaydon.mccourse.block.farmingconfigs.Config;
-import com.tamsynnclaydon.mccourse.block.farmingconfigs.Configs;
 import com.tamsynnclaydon.mccourse.compat.ModStrippedBlock;
 import com.tamsynnclaydon.mccourse.compat.ModTilledBlock;
 import com.tamsynnclaydon.mccourse.item.BigChestItemStackTileEntityRenderer;
@@ -83,12 +81,15 @@ public class ModBlocks extends Blocks{
                             .harvestTool(ToolType.AXE)
                             .harvestLevel(0)));
 
-    public static final RegistryObject<Block> FERTILE_SOUL_SOIL = register("fertile_soul_soil",
+  /*  public static final RegistryObject<Block> FERTILE_SOUL_SOIL = register("fertile_soul_soil",
             ()-> new ModTilledBlock(FARMLAND.getDefaultState(),
                     AbstractBlock.Properties.create(Material.EARTH)
                             .hardnessAndResistance(0.5f,0.5f)
                             .harvestTool(ToolType.HOE)
-                            .harvestLevel(0)));
+                            .harvestLevel(0)));*/
+
+    public static final RegistryObject<Block> FERTILE_SOUL_SOIL = register("fertile_soul_soil",
+            () -> new NetherFarmland(AbstractBlock.Properties.from(Blocks.FARMLAND)));
 
     public static final RegistryObject<Block> REDWOOD_LEAVES = register("redwood_leaves",
             () -> new LeavesBlock(AbstractBlock.Properties.from(Blocks.OAK_LEAVES)));
@@ -114,4 +115,6 @@ public class ModBlocks extends Blocks{
                 new Item.Properties().group(MCCourseMod.COURSE_TAB).setISTER(() -> BigChestItemStackTileEntityRenderer::new)));
         return toReturn;
     }
+
+
 }
